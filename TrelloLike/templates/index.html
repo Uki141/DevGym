@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>TrelloLike</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}">
+    <script src="{{url_for('static', filename='index.js')}}"></script>
+  </head>
+  <body>
+    <form class="postit_form" action="/add" method="post">
+      <input type="text" name="title" value="">
+      <input type="submit" name="" value="add">
+    </form>
+
+    {% for postit in postits %}
+    <p>{{postit.title}}：{{postit.date}}</p>
+    {% endfor %}
+  </body>
+</html>
